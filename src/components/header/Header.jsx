@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo_img from '../../assets/LOGOTYPEBILETICK.svg';
-import { SlBadge } from "react-icons/sl";
+import { CiBookmark } from "react-icons/ci";
 import { IoSearchOutline } from "react-icons/io5";
 import { FaTv } from "react-icons/fa";
 import { MdLocalMovies } from "react-icons/md";
@@ -14,7 +14,7 @@ const Header = () => {
     { to: "/", label: "Home", Icon: FaTv },
     { to: "/movies", label: "Movies", Icon: MdLocalMovies },
     { to: "/search", label: "Search", Icon: IoSearchOutline },
-    { to: "/saved", label: "Saved", Icon: SlBadge },
+    { to: "/saved", label: "Saved", Icon: CiBookmark },
   ];
 
   return (
