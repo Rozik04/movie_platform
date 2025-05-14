@@ -1,5 +1,5 @@
-import { api } from '@/api'
 import MovieView from '@/components/movie-view/MovieView'
+import Skeleton from '@/components/skeleton/Skeleton'
 import { useFetch } from '@/hooks/useFetch'
 import React, { useEffect, useState } from 'react'
 
@@ -12,6 +12,7 @@ const Home = () => {
   return (
     <div>
       <MovieView data={data?.results}/>
+      {loading && <Skeleton count={10}/>}
     </div>
   )
 }

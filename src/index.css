@@ -18,3 +18,12 @@
 body{
     background-color: black;
 }
+
+.scrollbar-custom::-webkit-scrollbar {
+  display: none; 
+}
+
+.scrollbar-custom {
+  -ms-overflow-style: none;  
+  scrollbar-width: none;    
+}
