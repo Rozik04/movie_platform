@@ -12,7 +12,9 @@ export const useFetch = (endpoint, params = {}) => {
             .get(endpoint, {
                 params
             })
-            .then(res => setData(res.data))
+            .then(res =>
+                {console.log(res);
+                setData(res.data)})
             .catch(err => setError(err.response.data))
             .finally(()=> setLoading(false))
     }, [endpoint, JSON.stringify(params)])

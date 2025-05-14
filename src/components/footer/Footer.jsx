@@ -16,7 +16,7 @@ import vector11_img from '../../assets/iconsFooter/Vector (9).svg'
 
 const Footer = () => {
   return (
-    <footer className='container mx-auto bg-gray-900 flex flex-wrap justify-center items-start p-10 rounded-[20px] mb-[50px]'>
+    <footer className='container mx-auto bg-black bg-gray-900 flex flex-wrap justify-center items-start p-10 rounded-[20px] mb-[50px]'>
         <div className='w-full sm:w-1/2 md:w-1/4 lg:w-1/4 flex flex-col items-start justify-center gap-6 p-10'>
             <img src={logo_img} alt="Logo" />
             <div className='flex flex-col gap-4'>

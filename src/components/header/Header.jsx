@@ -42,7 +42,7 @@ const Header = () => {
           <div className="flex items-center gap-2 cursor-pointer hover:text-red-700">
             <FiSun size={24}/>
           </div>
-          <button className="w-[150px] h-[50px] bg-red-700 rounded-[15px]">
+          <button className="w-[150px] h-[50px] bg-red-700 rounded-[15px] hover:bg-gray-800 transition duration-100">
             Sign Up
           </button>
         </div>
