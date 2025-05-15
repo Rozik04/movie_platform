@@ -38,7 +38,7 @@ return (
         {
             oneImage && images?.backdrops[index] ? (
                 <div className='relative mt-10'>
-                    <img src={url + images.backdrops[index].file_path} alt="" className="w-full h-[700px] object-cover" />
+                    <img src={url + images.backdrops[index].file_path} alt="" className="w-full h-[700px] rounded-[30px] object-cover" />
                     <button
                         onClick={() => setOneImage(false)}
                         className='absolute w-[40px] top-0 left-275  mt-4 p-2 bg-gray-700 text-white rounded-[30px] hover:bg-red-700 transition'>✕</button>
@@ -48,7 +48,7 @@ return (
                     <div className='mb-4'>
                         {data?.backdrop_path ? (
                             <div className="relative select-none overflow-hidden">
-                                <img src={url + data.backdrop_path} alt={data.title} className="w-full h-[500px] object-cover" />
+                                <img src={url + data.backdrop_path} alt={data.title} className="w-full rounded-[30px] h-[500px] object-cover" />
                                     <div className="absolute bottom-0 left-0 right-0 top-[27rem] p-4 bg-gradient-to-t -mb-5 from-black/100 to-transparent flex flex-col gap-0 transition-all duration-300 hover:top-[19rem]">
                                     <h1 className='text-4xl font-bold mb-2' style={{ fontFamily: 'Verdana, sans-serif' }}>
                                         {data?.title ?? 'No Title'}

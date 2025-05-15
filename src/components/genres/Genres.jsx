@@ -1,14 +1,10 @@
 import { useFetch } from '@/hooks/useFetch';
 import React, { useState } from 'react';
 
-const Genres = ({ setGenre }) => {
+const Genres = ({handleChangeGenre, genres }) => {
   const { data } = useFetch('/genre/movie/list');
-  const [activeGenre, setActiveGenre] = useState(null);
+  const array = genres.split("-").slice(1);
 
-  const handleGenreClick = (genre) => {
-    setActiveGenre(genre.id);
-    setGenre(genre.id.toString());
-  };
 
   return (
     <div className="container mx-auto py-4">
@@ -16,14 +12,13 @@ const Genres = ({ setGenre }) => {
         {data?.genres?.map((genre) => (
           <div
             key={genre.id}
-            onClick={() => handleGenreClick(genre)}
-            className={`cursor-pointer select-none whitespace-nowrap px-4 py-2 rounded-lg transition-all duration-300 ${
-              activeGenre === genre.id
-                ? 'bg-red-700 text-white'
-                : 'bg-gray-700 hover:bg-gray-600'
-            }`}
+            onClick={() => handleChangeGenre(genre.id.toString())}
+              className={`${
+                array.includes(genre.id.toString()) ? "bg-red-700 text-white" : "bg-gray-800 text-white"
+                } flex justify-center items-center w-[150px] h-[40px] cursor-pointer select-none p-2.5 rounded-2xl`}
+
           >
-            {genre.name}
+          {genre.name}
           </div>
         ))}
       </div>

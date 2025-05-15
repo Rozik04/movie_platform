@@ -6,6 +6,7 @@ import { IoSearchOutline } from "react-icons/io5";
 import { CiBookmark } from "react-icons/ci";
 import { FiMenu, FiX, FiSun, FiUser } from "react-icons/fi";
 import logo_img from "@/assets/LOGOTYPEBILETICK.svg"
+import "./header.css"
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,21 +19,21 @@ const Header = () => {
   ];
 
   return (
-    <header className="left-0 top-0 w-full h-[100px] bg-black text-white z-50 pt-[15px]">
+    <header className="left-0 top-0 w-full h-[100px] bg-blacktext-white z-50 pt-[15px]">
       <div className="container mx-auto flex items-center justify-between px-5">
         <img src={logo_img} alt="Logo" className="h-[50px]" />
 
         <nav className="hidden lg:flex flex-row gap-[50px]">
           {links.map(({ to, label, Icon }) => (
-            <NavLink key={to} className="group block p-3 rounded-md" to={to}>
-              <div className="w-[30px] h-[50px] flex flex-col items-center justify-center group">
+            <NavLink to={to}  key={to} className={({isActive}) => `group block p-3 rounded-md ${isActive ? "text-red-800" : "text-white"}`}>
+              <div className="flex flex-col items-center gap-1">
                 <Icon
                   style={{ width: "30px", height: "30px" }}
-                  className="text-gray-300 group-hover:text-red-700"
                 />
-                <h1 className="text-gray-300 group-hover:text-red-700">
+                <ul 
+                >
                   {label}
-                </h1>
+                </ul>
               </div>
             </NavLink>
           ))}
@@ -42,7 +43,7 @@ const Header = () => {
           <div className="flex items-center gap-2 cursor-pointer hover:text-red-700">
             <FiSun size={24}/>
           </div>
-          <button className="w-[150px] h-[50px] bg-red-700 rounded-[15px] hover:bg-gray-800 transition duration-100">
+          <button className="w-[150px] h-[50px] bg-red-700 text-white rounded-[15px] hover:bg-gray-800 transition duration-100">
             Sign Up
           </button>
         </div>
@@ -50,7 +51,7 @@ const Header = () => {
         <div className="lg:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-gray-300 hover:text-red-700"
+            className="text-white hover:text-red-700"
           >
             {isOpen ? <FiX size={30} /> : <FiMenu size={30} />}
           </button>
@@ -72,7 +73,7 @@ const Header = () => {
           ))}
 
           <div className="border-t border-gray-600 mt-3 pt-3">
-            <div className="flex items-center gap-2 py-2 hover:text-red-700 cursor-pointer">
+            <div className="flex items-center text-white gap-2 py-2 hover:text-red-700 cursor-pointer">
               <FiSun size={20} />
               <span>Light Mode</span>
             </div>
