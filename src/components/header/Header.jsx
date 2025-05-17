@@ -4,22 +4,29 @@ import { FaTv } from "react-icons/fa";
 import { MdLocalMovies } from "react-icons/md";
 import { IoSearchOutline } from "react-icons/io5";
 import { CiBookmark } from "react-icons/ci";
-import { FiMenu, FiX, FiSun, FiUser } from "react-icons/fi";
+import { FiMenu, FiX, FiSun, FiUser, FiMoon } from "react-icons/fi"; 
 import logo_img from "@/assets/LOGOTYPEBILETICK.svg"
 import "./header.css"
+import { useStateValue } from "@/context";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const [lightMode, setLightMode] = useState(false); 
+  const [value] = useStateValue();
+  
   const links = [
     { to: "/", label: "Home", Icon: FaTv },
     { to: "/movies", label: "Movies", Icon: MdLocalMovies },
-    { to: "/search", label: "Search", Icon: IoSearchOutline },
     { to: "/saved", label: "Saved", Icon: CiBookmark },
+    { to: "/search", label: "Search", Icon: IoSearchOutline }
   ];
 
+  const toggleLightMode = () => {
+    setLightMode(!lightMode);
+  };
+
   return (
-    <header className="left-0 top-0 w-full h-[100px] bg-blacktext-white z-50 pt-[15px]">
+    <header className="left-0 top-0 w-full h-[100px] bg-black text-white z-50 pt-[15px]">
       <div className="container mx-auto flex items-center justify-between px-5">
         <img src={logo_img} alt="Logo" className="h-[50px]" />
 
@@ -30,20 +37,25 @@ const Header = () => {
                 <Icon
                   style={{ width: "30px", height: "30px" }}
                 />
-                <ul 
-                >
-                  {label}
-                </ul>
+                <ul>{label}</ul>
               </div>
             </NavLink>
           ))}
         </nav>
 
         <div className="hidden lg:flex items-center gap-5">
-          <div className="flex items-center gap-2 cursor-pointer hover:text-red-700">
-            <FiSun size={24}/>
+          <div onClick={toggleLightMode} className="relative w-8 h-8 cursor-pointer">
+            <FiSun
+              size={24}
+              className={`absolute top-0 left-0 transition-opacity duration-500 ease-in-out ${lightMode ? "opacity-0 scale-75" : "opacity-100 scale-100"}`}
+            />
+            <FiMoon
+              size={24}
+              className={`absolute top-0 left-0 transition-opacity duration-500 ease-in-out ${lightMode ? "opacity-100 scale-100" : "opacity-0 scale-75"}`}
+            />
           </div>
-          <button className="w-[150px] h-[50px] bg-red-700 text-white rounded-[15px] hover:bg-gray-800 transition duration-100">
+
+          <button className="w-[150px] h-[50px] bg-red-700 text-white rounded-[15px] hover:bg-gray-500 transition duration-100">
             Sign Up
           </button>
         </div>
@@ -73,9 +85,10 @@ const Header = () => {
           ))}
 
           <div className="border-t border-gray-600 mt-3 pt-3">
-            <div className="flex items-center text-white gap-2 py-2 hover:text-red-700 cursor-pointer">
-              <FiSun size={20} />
-              <span>Light Mode</span>
+            <div onClick={toggleLightMode} className="flex items-center text-white gap-2 py-2 hover:text-red-700 cursor-pointer">
+              <FiSun className={`${lightMode ? "hidden" : "block"}`} size={20} />
+              <FiMoon className={`${lightMode ? "block" : "hidden"}`} size={20} />
+              <span>{lightMode ? "Dark Mode" : "Light Mode"}</span>
             </div>
             <div className="flex items-center gap-2 py-2 hover:text-red-700 cursor-pointer">
               <FiUser size={20} />

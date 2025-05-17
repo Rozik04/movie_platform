@@ -63,7 +63,7 @@ const Swipers = () => {
             <div className='absolute inset-0 flex flex-col justify-end items-center p-10'>
               <h2 className='text-white text-3xl font-bold mb-2'>{movie.title}</h2>
               <p className='text-white mb-4 text-lg'>{movie.info}</p>
-              <button className='text-red-800 w-[300px] text-xl px-6 py-3 bg-gray-200 bg-opacity-50 rounded-[15px] flex items-center justify-center gap-2'>
+              <button className='text-red-800 w-[300px] text-xl px-6 py-3 bg-gray-200 bg-opacity-50 rounded-[15px] flex items-center justify-center gap-2 hover:bg-gray-500 transition duration-200 hover:text-white transition duration-200'>
                 <FaPlay className='text-2xl' /> Watch
               </button>
             </div>
