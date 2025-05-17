@@ -6,7 +6,12 @@ import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss(), VitePWA()],
+  plugins: [react(), tailwindcss(),     VitePWA({
+      registerType: 'autoUpdate',
+      devOptions: {
+        enabled: false,
+      },
+    }),],
     resolve: {
       alias: {
       "@": path.resolve(__dirname, "./src"),
