@@ -20,8 +20,18 @@ const SwiperMovie = () => {
 
   return (
     <Swiper
-      slidesPerView={4}
-      spaceBetween={20}
+      slidesPerView={1}
+      breakpoints={{
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 15,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+        },
+      }}
+      spaceBetween={10}
       freeMode={true}
       pagination={{ clickable: true }}
       modules={[FreeMode, Pagination]}
@@ -29,7 +39,7 @@ const SwiperMovie = () => {
     >
       {data?.results?.map((item) => (
         <SwiperSlide key={item.id}>
-          <Card item={item}/>
+          <Card item={item} />
         </SwiperSlide>
       ))}
     </Swiper>

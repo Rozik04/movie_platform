@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { FaTv } from "react-icons/fa";
 import { MdLocalMovies } from "react-icons/md";
 import { IoSearchOutline } from "react-icons/io5";
@@ -13,6 +13,8 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [lightMode, setLightMode] = useState(false); 
   const [value] = useStateValue();
+  const navigate = useNavigate();
+
   
   const links = [
     { to: "/", label: "Home", Icon: FaTv },
@@ -54,8 +56,8 @@ const Header = () => {
               className={`absolute top-0 left-0 transition-opacity duration-500 ease-in-out ${lightMode ? "opacity-100 scale-100" : "opacity-0 scale-75"}`}
             />
           </div>
-
-          <button className="w-[150px] h-[50px] bg-red-700 text-white rounded-[15px] hover:bg-gray-500 cursor-pointer transition duration-100">
+          <button className="w-[150px] h-[50px] bg-red-700 text-white rounded-[15px] hover:bg-gray-500 cursor-pointer transition duration-100"  
+          onClick={()=>{navigate("/sign-up")}}>
             Sign Up
           </button>
         </div>

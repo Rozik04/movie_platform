@@ -10,7 +10,6 @@ const Saved = () => {
   if (!state.saved || state.saved.length === 0) {
     return (
       <div className="flex flex-col justify-center items-center h-[60vh] text-white text-lg gap-4">
-        <img src={no_data} alt="No Data" className="w-[150px] h-auto object-contain" />
         <p>No saved data yet.</p>
       </div>
     );
