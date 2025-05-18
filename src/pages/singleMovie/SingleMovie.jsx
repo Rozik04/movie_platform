@@ -41,7 +41,7 @@ const SingleMovie = () => {
                                 <img src={url + images.backdrops[index].file_path} alt="" className="w-full h-[700px] rounded-[30px] object-cover" />
                                 <button
                                     onClick={() => setOneImage(false)}
-                                    className='absolute w-[40px] top-0 right-4  mt-4 p-2 bg-gray-700 text-white rounded-[30px] hover:bg-red-700 transition'>✕</button>
+                                    className='absolute w-[40px] top-0 right-4  mt-4 p-2 bg-gray-700 text-white rounded-[30px] hover:bg-red-700 hover:shadow-lg transition'>✕</button>
                             </div>
                         ) : (
                             <>

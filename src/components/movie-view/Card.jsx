@@ -5,6 +5,7 @@ import { FaBookmark } from "react-icons/fa6";
 import { FaRegBookmark } from "react-icons/fa";
 import { useStateValue } from '@/context';
 
+
 const Card = ({ item }) => {
   const url = import.meta.env.VITE_IMAGE_URL;
   const navigate = useNavigate();

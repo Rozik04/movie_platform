@@ -1,7 +1,7 @@
 import MovieView from '@/components/movie-view/MovieView';
 import { useStateValue } from '@/context';
 import React from 'react';
-import no_data from '../../assets/x.png';
+import no_data from '../../assets/zoom.png';
 
 const Saved = () => {
   const [state] = useStateValue();

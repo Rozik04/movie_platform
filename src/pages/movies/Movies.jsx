@@ -5,7 +5,7 @@ import { useFetch } from '@/hooks/useFetch'
 import { Pagination } from '@mui/material'
 import React, { useCallback, useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import no_data from '../../assets/sad.webp'
+import no_data from '../../assets/zoom.png'
 
 const Movies = () => {
   const [params, setParams] = useSearchParams()

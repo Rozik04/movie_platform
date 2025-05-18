@@ -10,10 +10,6 @@ export const initialState = store || {
 
 export const reducer = (state, action) => {
     switch(action.type){
-        case "INC":
-            return {...state, count: state.count+1}
-        case "DEC":
-            return {...state, count: state.count-1}
         case "SAVED":
             let index = state.saved.findIndex(({id}) => id === action.payload.id)
             let store = null

@@ -1,6 +1,6 @@
 import React from 'react';
-import Swipers from '@/components/swiper/swiper';
-import SwiperMovie from '@/components/swiper/SwiperMovie';
+import Swipers from '../../components/swiper/Swiper';
+import SwiperMovie from '../../components/swiper/SwiperMovie';
 import { useNavigate } from 'react-router-dom';
 
 const SwiperContainer = () => {

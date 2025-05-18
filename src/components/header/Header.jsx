@@ -55,7 +55,7 @@ const Header = () => {
             />
           </div>
 
-          <button className="w-[150px] h-[50px] bg-red-700 text-white rounded-[15px] hover:bg-gray-500 transition duration-100">
+          <button className="w-[150px] h-[50px] bg-red-700 text-white rounded-[15px] hover:bg-gray-500 cursor-pointer transition duration-100">
             Sign Up
           </button>
         </div>

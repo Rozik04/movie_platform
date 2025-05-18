@@ -4,8 +4,8 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 import { FreeMode, Pagination } from 'swiper/modules';
-import { useFetch } from '@/hooks/useFetch';
-import Card from '@/components/movie-view/Card';
+import { useFetch } from '../../hooks/useFetch';
+import Card from '../../components/movie-view/Card';
 import './stylesMovie.css';
 
 const SwiperMovie = () => {
